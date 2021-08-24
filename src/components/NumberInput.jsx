@@ -1,22 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const NumberInput = ({name, number, modifyNumber}) => {
+const NumberInput = ({name, numbers, modifyNumbers}) => {
 
     const handleChange = (e) => {
-        modifyNumber(parseFloat(e.target.value));
+        modifyNumbers({
+            ...numbers,
+            [e.target.name]: parseFloat(e.target.value)
+        }       
+        )
     }
 
     return (
         <label>
-            {name}: <input value={number} onChange={handleChange} type="number"/>
+            <input value={numbers[name]} name={name} onChange={handleChange} type="number"/>
         </label>
     )
 }
 
 NumberInput.propTypes = { 
     name: PropTypes.string,
-    modifyNumber: PropTypes.func
+    numbers: PropTypes.object,
+    modifyNumbers: PropTypes.func
 }
 
 export default NumberInput;
