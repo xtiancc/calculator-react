@@ -5,8 +5,7 @@ const Resultado = ({operacion , calculo }) => {
 
     return (
         <div>
-            <br/>
-            <span>{operacion}: {calculo} </span>
+            <p><span className="fw-bold">{operacion}:</span> {calculo} </p>
         </div>
     )
 }

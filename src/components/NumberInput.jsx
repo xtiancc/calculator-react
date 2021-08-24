@@ -12,9 +12,9 @@ const NumberInput = ({name, numbers, modifyNumbers}) => {
     }
 
     return (
-        <label>
-            <input value={numbers[name]} name={name} onChange={handleChange} type="number"/>
-        </label>
+        <div className="w-50 m-auto">
+            <input className="form-control mb-3" value={numbers[name]} name={name} onChange={handleChange} type="number"/>
+        </div>
     )
 }
 
